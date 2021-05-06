@@ -1,0 +1,41 @@
+<html>
+  <head>
+<!--adicionando a referência da biblioteca, das funções que precisamos para carregá-la-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+   <script>
+    //carregando o pacote primordial (em inglês, core) da versão mais recente do google charts
+      google.charts.load('current', {'packages':['corechart']});
+
+//criando a função que contém a tabela de dados e  desenha o nosso gráfico
+function desenharGraficoPizza() {
+
+//tabela com colunas, linhas e dados
+        var tabela = google.visualization.DataTable();
+tabela.addColumn(‘string’, ‘categoria’);
+tabela.addColumn(‘number’, ‘valores’);
+tabela.addRows([
+              [‘Educação‘, 2000],
+[‘Transporte‘, 500],
+[‘Lazer‘, 230],
+[‘Saúde‘, 50],
+[‘Cartão de crédito‘, 900],
+[‘Alimentação‘, 260]
+            ]);
+
+// instanciando um objeto do tipo gráfico de pizza ou PieChart (gráfico de torta) passando a div do html
+        var grafico = new google.visualization.PieChart(document.getElementById(‘graficoPizza’));
+//passando a tabela para a função desenhar, draw que desenha o gráfico
+        grafico.draw(tabela);
+      }
+
+//usando uma função de retorno (em inglês callback) que será executada para chamar a função do nosso gráfico
+ google.charts.setOnLoadCallback(desenharGraficoPizza);
+
+ </script>
+  </head>
+  <body>
+<!--adicionando a div para o gráfico ser exibido-->
+    <div id="graficoPizza"></div>
+  </body>
+</html>
