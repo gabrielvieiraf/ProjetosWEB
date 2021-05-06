@@ -1,0 +1,11 @@
+{
+  "name": "servidores",
+  "version": "1.0.0",
+  "description": "servidores teste",
+  "main": "requisicao.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gabriel Vieira Flores",
+  "license": "MIT"
+}
